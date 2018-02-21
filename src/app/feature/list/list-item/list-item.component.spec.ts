@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListItemComponent } from './list-item.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ListItemComponent', () => {
   let component: ListItemComponent;
@@ -8,7 +9,8 @@ describe('ListItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListItemComponent ]
+      declarations: [ListItemComponent],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

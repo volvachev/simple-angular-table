@@ -4,7 +4,7 @@ import { ListComponent } from './list.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { ListItemButtonComponent } from './list-item-button/list-item-button.component';
 
-const component = [
+const components = [
   ListComponent,
   ListItemComponent,
   ListItemButtonComponent
@@ -12,13 +12,13 @@ const component = [
 
 @NgModule({
   declarations: [
-    ...component
+    ...components
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    ...component
+    ...components
   ]
 })
 export class ListModule { }
