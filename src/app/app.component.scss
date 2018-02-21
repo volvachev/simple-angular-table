@@ -1,0 +1,6 @@
+@import '../variable';
+
+:host {
+  padding: $default-margin;
+  display: block;
+}

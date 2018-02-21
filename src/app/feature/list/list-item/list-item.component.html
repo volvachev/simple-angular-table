@@ -1,0 +1,31 @@
+<div class="list-item-order">{{orderNumber}}.</div>
+<div class="list-item__container">
+  <div class="list-item__name">{{list?.name}}</div>
+  <div class="list-item-load__container">
+    <app-list-item-button
+      header="Download"
+      icon="↓"
+      [text]="list?.download">
+    </app-list-item-button>
+    <app-list-item-button
+      [text]="list?.upload"
+      containerClass="button-load-upload">
+    </app-list-item-button>
+  </div>
+  <div class="list-item-info">
+    <ul>
+      <li *ngFor="let item of list?.tarifInfo">{{item}}</li>
+    </ul>
+  </div>
+  <div class="list-item-action">
+    <div class="list-item__price">
+        {{list?.price | currency:'EUR':'symbol':'2.0-2'}}
+      </div>
+      <div class="list-item__to-item">
+        <button class="to-item__button">
+          <span class="to-item__button-text">To Tarrif</span>
+          <span class="to-item__button-icon">></span>
+        </button>
+      </div>
+  </div>
+</div>

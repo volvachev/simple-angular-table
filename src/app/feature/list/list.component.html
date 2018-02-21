@@ -1,0 +1,12 @@
+<section>
+  <div>Sorting</div>
+  <button (click)="sort('download')">Download</button>
+  <button (click)="sort('upload')">Upload</button>
+  <button (click)="sort('price')">Price</button>
+</section>
+
+<app-list-item
+  *ngFor="let item of lists; let index = index;"
+  [orderNumber]="index + 1"
+  [list]="item">
+</app-list-item>

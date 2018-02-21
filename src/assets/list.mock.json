@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Tarif Name",
+    "download": 12,
+    "upload": 6,
+    "price": 200,
+    "tarifInfo": [
+      "Tarif Benefit 1",
+      "Tarif Benefit 2",
+      "Tarif Benefit 3"
+    ]
+  },
+  {
+    "name": "Tarif New",
+    "download": 10,
+    "upload": 2,
+    "price": 400,
+    "tarifInfo": [
+      "Tarif New 1",
+      "Tarif New 2",
+      "Tarif New 3"
+    ]
+  },
+  {
+    "name": "Tarif Old",
+    "download": 2,
+    "upload": 5,
+    "price": 60,
+    "tarifInfo": [
+      "Tarif Old 1",
+      "Tarif Old 2",
+      "Tarif Old 3"
+    ]
+  },
+  {
+    "name": "Tarif Best",
+    "download": 120,
+    "upload": 30,
+    "price": 400,
+    "tarifInfo": [
+      "Tarif Best 1",
+      "Tarif Best 2",
+      "Tarif Best 3"
+    ]
+  },
+  {
+    "name": "Tarif Middle",
+    "download": 65,
+    "upload": 15,
+    "price": 1300,
+    "tarifInfo": [
+      "Tarif Middle 1",
+      "Tarif Middle 2",
+      "Tarif Middle 3"
+    ]
+  }
+]

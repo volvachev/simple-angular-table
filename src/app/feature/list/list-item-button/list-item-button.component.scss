@@ -1,0 +1,76 @@
+@import '../../../../variable';
+
+:host {
+  margin-bottom: 5px;
+}
+
+.button-load-header {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .button-load {
+    &_text {
+      .text-data {
+        text-align: right;
+      }
+
+      .text-speed {
+        margin-left: -6px;
+        margin-top: 6px;
+      }
+    }
+
+    &-container.button-load-upload {
+      display: none;
+    }
+
+    &-container {
+      display: flex;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .button-load {
+    &_icon {
+      padding: 5px $default-margin;
+      border: 1px solid;
+      position: relative;
+      z-index: 1;
+      background: white;
+      margin-left: -1px;
+      margin-top: -1px;
+      margin-bottom: -1px;
+    }
+
+    &_text {
+      display: flex;
+    }
+
+    &-upload {
+      margin-top: $default-margin;
+    }
+
+    &-container {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid $primary-color;
+      border-radius: 31%;
+      min-width: 125px;
+    }
+  }
+}
+
+@media(min-width: 992px) {
+  .button-load {
+    &-header {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    &-upload {
+      margin-top: 0;
+    }
+  }
+}

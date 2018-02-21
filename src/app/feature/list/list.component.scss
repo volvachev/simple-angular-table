@@ -1,0 +1,9 @@
+@import '../../../variable';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: $default-margin;
+  border: 1px solid $primary-color;
+  width: 100%;
+}
