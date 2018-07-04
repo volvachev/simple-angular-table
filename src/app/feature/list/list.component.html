@@ -6,7 +6,7 @@
 </section>
 
 <app-list-item
-  *ngFor="let item of lists; let index = index;"
+  *ngFor="let item of (lists$ | async) | sortBy: filterByName; let index = index; trackBy: trackByFn"
   [orderNumber]="index + 1"
   [list]="item">
 </app-list-item>

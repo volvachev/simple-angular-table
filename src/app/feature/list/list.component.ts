@@ -1,50 +1,45 @@
-import { ApiService } from '@feature/services/api.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectionStrategy
+} from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { takeUntil } from 'rxjs/operators';
+import { Observable } from 'rxjs/Observable';
+import { ApiService } from '@feature/services/api.service';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListComponent implements OnInit, OnDestroy {
 
-  public lists: IList[] = [];
+  public lists$: Observable<IList[]>;
+  public filterByName: string = null;
 
-  private destroyStream = new Subject<void>();
+  private destroyStream$ = new Subject<void>();
 
-  constructor(private readonly apiService: ApiService) { }
+  constructor(
+    private readonly apiService: ApiService,
+  ) { }
 
   public ngOnInit(): void {
-    this.apiService.get<IList[]>('assets/list.mock.json')
-      .pipe(
-        takeUntil(this.destroyStream)
-      )
-      .subscribe(item => {
-        this.lists = item;
-      });
+    this.lists$ = this.apiService.get<IList[]>('assets/list.mock.json');
   }
 
   public ngOnDestroy(): void {
-    this.destroyStream.next();
+    // add feature for destroy stream
+    this.destroyStream$.next();
   }
 
   public sort(fieldName: string): void {
-    this.lists = this.lists.sort((a, b) => {
-      if (a[fieldName] === b[fieldName]) {
-        return 0;
-      }
+    this.filterByName = fieldName;
+  }
 
-      if (a[fieldName] == null) {
-        return 1;
-      }
-
-      if (b[fieldName] == null) {
-        return -1;
-      }
-
-      return a[fieldName] > b[fieldName] ? 1 : -1;
-    });
+  public trackByFn(index: number, item: IList): string {
+    return index + item.name;
   }
 }
